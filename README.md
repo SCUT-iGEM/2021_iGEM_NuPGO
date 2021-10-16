@@ -18,7 +18,7 @@
       - gccontent.m 、gcprofile.m : Computes the GC content or GC content of each 1000bp sliding window  of a sequence.
       - getResult.m : Function for conveniently obtain the result.
       - init.m : Initializes the population from input sequence.
-      - mutate.m : Introduces mutations to the population.
+      - mutate.m : Introduces mutations to the population. 
       - mydraw.m : Draw the visualized result as the assistant function for getResult.m script.
       - rewriteR.m : Rewrites fitness2.R in order to make it suitable for inputting sequence in this round.
       - rewriteR_NuPoP.m : Rewrites NuPoP.R in order to make it suitable for inputting sequence in this round.
