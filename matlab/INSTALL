@@ -1,0 +1,32 @@
+#!/usr/bin/perl 
+
+use Getopt::Long;
+  Getopt::Long::GetOptions(              
+      'compiler=s'    => \$compiler,                  
+          'help'      => \$wants_help,           
+       'prefix=s'    => \$prefix); 
+ 
+
+$fcc="gfortran";
+$destPath = "./";
+
+if(defined($wants_help)){
+        print "\n-compiler=YOUR_COMPILER :Set your compiler, default use \"Gfortran\";\n-prefix=PATH_INSTALL_NPRED : Set the path to install final Npred Binary, default install in current directory;\n-help :Print Help Information\n\n";
+
+	exit;
+}
+
+if(defined($compiler)){   
+	$fcc = lc $compiler;
+}
+
+if(defined($prefix)){
+	$destPath = $prefix;
+}
+
+$output = `perl changePath.pl`;
+print $output;
+
+print "$fcc Npred2.f90 -o Npred2.exe\n";
+$output = `$fcc Npred2.f90 -o Npred2`;
+print "$output\n";
